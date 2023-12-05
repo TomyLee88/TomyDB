@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Welcome to My Trip Planner</h1>
+            <p class="lead">Plan your trips and manage your activities easily!</p>
+            <p>"Embark on a seamless journey with My Trip Planner, your ultimate travel companion. Imagine effortlessly organizing your travel plans, from dreamy getaways to thrilling adventures, all at your fingertips. Say goodbye to the hassle of planning and embrace the joy of exploration. 
+                My Trip Planner empowers you to curate, manage, and delve into your travel experiences effortlessly. Whether it's crafting your bucket list, managing detailed itineraries, or discovering hidden gems, our intuitive interface simplifies it all. It's your travel diary, your guidebook, and your travel buddy - rolled into one!
+                Explore new horizons, capture unforgettable memories, and unlock endless possibilities with My Trip Planner. Your journey begins here – start creating your next adventure today!"</p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://picsum.photos/800/600?random={{ random_number }}" alt="Random Image" class="img-fluid">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Create a New Trip</h5>
+                    <p class="card-text">Start planning your next adventure!</p>
+                    <a href="{{ url_for('create_trip') }}" class="btn btn-primary">Create Trip</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">View All Trips</h5>
+                    <p class="card-text">Check out your planned trips.</p>
+                    <a href="{{ url_for('list_trips') }}" class="btn btn-primary">View Trips</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

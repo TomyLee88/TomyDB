@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container mt-4">
+        <h1>Add Activity to Trip</h1>
+        <form method="POST" action="{{ url_for('create_activity', trip_id=trip_id) }}">
+            <div class="mb-3">
+                <label for="name" class="form-label">Activity Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Activity Description:</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Activity Date:</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Activity</button>
+        </form>
+    </div>
+{% endblock %}

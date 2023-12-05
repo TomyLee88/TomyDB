@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}All Trips{% endblock %}
+
+{% block content %}
+  <h1>All Trips</h1>
+  <div class="row">
+    {% for trip in trips %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ trip.title }}</h5>
+            <p class="card-text">Destination: {{ trip.destination }}</p>
+            <p class="card-text">Start Date: {{ trip.start_date }}</p>
+            <p class="card-text">End Date: {{ trip.end_date }}</p>
+            <a href="{{ url_for('show_trip', trip_id=trip.id) }}" class="btn btn-primary">View Details</a>
+            <a href="{{ url_for('edit_trip', trip_id=trip.id) }}" class="btn btn-primary">Edit Trip</a>
+            <a href="{{ url_for('create_activity', trip_id=trip.id) }}" class="btn btn-primary">Add Activity</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

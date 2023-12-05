@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ trip.title }} Activities</h1>
+    <div class="activity-list">
+        {% for activity in activities %}
+            <div class="activity">
+                <h3>{{ activity.name }}</h3>
+                <p class="activity-description">{{ activity.description }}</p>
+                <p class="activity-date">Date: {{ activity.date }}</p>
+                <form action="{{ url_for('delete_activity', activity_id=activity.id) }}" method="post">
+                    <button type="submit" class="btn btn-danger">Delete Activity</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('create_activity', trip_id=trip.id) }}" class="btn btn-primary">Add Activity</a>
+{% endblock %}
